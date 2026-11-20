@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavenly Winds Villa — Menu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-deep:#0a3441;
+    --teal-deeper:#072831;
+    --gold-light:#f6d98a;
+    --gold:#e3ac47;
+    --gold-deep:#b9812a;
+    --cream:#fbf6ea;
+    --ink:#22302f;
+    --veg-green:#3f7d4f;
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{ height:100%; }
+
+  body{
+    margin:0;
+    background:radial-gradient(ellipse at top,#123642,#061e26 70%);
+    font-family:'Cormorant Garamond', serif;
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+
+  .landing{
+    width:100%;
+    max-width:560px;
+    background:linear-gradient(180deg,var(--teal-deep),var(--teal-deeper));
+    border-radius:6px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(230,190,110,0.15);
+    padding:44px 36px 40px;
+    text-align:center;
+    position:relative;
+  }
+
+  .landing::before{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(230,190,110,0.25);
+    border-radius:3px;
+    pointer-events:none;
+  }
+
+  .header svg{ display:block; margin:0 auto; width:100%; max-width:420px; height:auto; }
+  .brand-line{
+    color:var(--gold-light);
+    font-family:'Cinzel', serif;
+    letter-spacing:6px;
+    font-size:13px;
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+  .brand-name{
+    font-family:'Alex Brush', cursive;
+    color:var(--gold);
+    font-size:56px;
+    line-height:0.95;
+    margin:2px 0 0;
+    text-shadow:0 1px 0 rgba(0,0,0,0.25);
+  }
+  .brand-sub{
+    font-family:'Alex Brush', cursive;
+    color:var(--gold);
+    font-size:34px;
+    margin-top:-6px;
+  }
+  .header-rule{
+    height:2px;
+    width:70%;
+    margin:14px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold-light),transparent);
+  }
+
+  .prompt{
+    font-family:'Cinzel', serif;
+    font-size:13px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold-light);
+    margin:28px 0 20px;
+    opacity:.9;
+  }
+
+  .choices{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .choice{
+    flex:1 1 200px;
+    max-width:220px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    background:rgba(251,246,234,0.04);
+    border:1px solid rgba(230,190,110,0.35);
+    border-radius:4px;
+    padding:26px 18px 22px;
+    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+
+  .choice:hover{
+    transform:translateY(-4px);
+    background:rgba(251,246,234,0.09);
+    border-color:var(--gold-light);
+  }
+
+  .choice .mark{
+    width:26px;
+    height:26px;
+    border-radius:3px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .choice.veg .mark{ border:2px solid var(--veg-green); }
+  .choice.veg .mark::after{
+    content:"";
+    width:12px; height:12px;
+    border-radius:50%;
+    background:var(--veg-green);
+  }
+  .choice.nonveg .mark{ border:2px solid var(--nonveg-red); }
+  .choice.nonveg .mark::after{
+    content:"";
+    width:0; height:0;
+    border-left:7px solid transparent;
+    border-right:7px solid transparent;
+    border-bottom:12px solid var(--nonveg-red);
+  }
+
+  .choice .label{
+    font-family:'Cinzel', serif;
+    font-size:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--cream);
+  }
+  .choice .sub{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:13px;
+    color:var(--gold-light);
+    opacity:.8;
+  }
+
+  .mini-divider{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:30px 0 4px;
+  }
+  .mini-divider svg{ width:120px; height:16px; }
+
+  @media (max-width:480px){
+    .landing{ padding:34px 22px 30px; }
+    .brand-name{ font-size:44px; }
+    .brand-sub{ font-size:26px; }
+    .choices{ gap:14px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="landing">
+  <div class="header">
+    <svg viewBox="0 0 600 190" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="20,175 155,60 300,150 445,60 580,175" fill="none" stroke="url(#g1)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#e3ac47"/>
+          <stop offset="0.5" stop-color="#f6d98a"/>
+          <stop offset="1" stop-color="#e3ac47"/>
+        </linearGradient>
+      </defs>
+      <g fill="none" stroke="#eef3f2" stroke-width="4">
+        <rect x="118" y="95" width="40" height="60" rx="14"/>
+        <line x1="138" y1="95" x2="138" y2="155"/>
+        <line x1="118" y1="125" x2="158" y2="125"/>
+        <rect x="405" y="95" width="40" height="60" rx="14"/>
+        <line x1="425" y1="95" x2="425" y2="155"/>
+        <line x1="405" y1="125" x2="445" y2="125"/>
+      </g>
+    </svg>
+    <div class="header-rule"></div>
+    <div class="brand-line">I AM</div>
+    <div class="brand-name">Heavenly Winds</div>
+    <div class="brand-sub">Villa</div>
+  </div>
+
+  <div class="prompt">Choose Your Menu</div>
+
+  <div class="choices">
+    <a class="choice veg" href="veg.html">
+      <span class="mark"></span>
+      <span class="label">Veg</span>
+      <span class="sub">Luxe Vegetarian Menu</span>
+    </a>
+  </div>
+
+  <div class="mini-divider">
+    <svg viewBox="0 0 120 16" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="2,14 30,3 60,12 90,3 118,14" fill="none" stroke="#e3ac47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</div>
+
+</body>
+</html>
